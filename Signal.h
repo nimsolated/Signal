@@ -28,7 +28,7 @@ public:
 
     // invoke connected functions
     template <typename... CallArgs>
-    auto operator()(CallArgs&&... args) {
+    auto emit(CallArgs&&... args) {
         static_assert(sizeof...(CallArgs) == sizeof...(Args), "Wrong number of arguments to emit()");
 
         // handle void vs non-void return values
